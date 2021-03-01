@@ -18,6 +18,9 @@ class QuizIndex extends React.Component {
     generateLinks(){
         let array = [];
         for(let i = 1; i < this.props.total + 1; i++){
+            if (!this.props.firstQuestion[i - 1]){
+                continue
+            }
             if(i === 1){
                 array.push(
                     <div>
@@ -60,10 +63,11 @@ class QuizIndex extends React.Component {
     }
  
 
-    render(){
-     
-       
-        if(!this.props.total) return null; 
+    render(){       
+        if(!this.props.total){
+            debugger
+            return null; 
+        }
         if (this.firsts.length === 0) {
             for (let i = 1; i < this.props.total + 1; i++) {
                 // this.props.fetchFirstQuestion(i);
@@ -72,7 +76,9 @@ class QuizIndex extends React.Component {
         }      
 
         for(let i = 1; i < this.props.total + 1; i++){
-            if (!this.props.firstQuestion[i - 1]) return null;  
+            if (!this.props.firstQuestion[i - 1]){
+
+            }
         }
       
        

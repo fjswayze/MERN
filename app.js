@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     
     
 
